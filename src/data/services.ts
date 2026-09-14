@@ -12,5 +12,11 @@ export const services: Service[] = [
     icon: '🚗',
     description: '전기차 충전·정비·비용 관리',
     url: 'https://ev5-carnote.vercel.app'
+  },
+  {
+    name: '노트',
+    icon: '📝',
+    description: '메모·할 일·여행 기록',
+    url: 'https://sc-notebook.vercel.app'
   }
 ]
