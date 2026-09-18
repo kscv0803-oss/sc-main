@@ -6,6 +6,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* 카드마다 다르게 쓰는 파스텔 4색 - 노트 앱(my-notes)의 테마 색조와
+     그대로 맞춰서 두 개인 도구가 한 세트처럼 보이게 했다. */
+  --card-cream-bg: hsl(42 55% 96%);
+  --card-cream-border: hsl(38 35% 82%);
+  --card-mint-bg: hsl(160 45% 95%);
+  --card-mint-border: hsl(160 30% 78%);
+  --card-lavender-bg: hsl(265 45% 96%);
+  --card-lavender-border: hsl(263 30% 82%);
+  --card-peach-bg: hsl(18 65% 95%);
+  --card-peach-border: hsl(16 40% 80%);
 }
 
 @theme inline {
@@ -18,10 +29,19 @@
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+
+  --card-cream-bg: hsl(36 22% 9%);
+  --card-cream-border: hsl(36 18% 24%);
+  --card-mint-bg: hsl(165 22% 8%);
+  --card-mint-border: hsl(162 20% 24%);
+  --card-lavender-bg: hsl(263 24% 10%);
+  --card-lavender-border: hsl(263 20% 26%);
+  --card-peach-bg: hsl(16 24% 9%);
+  --card-peach-border: hsl(16 20% 25%);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

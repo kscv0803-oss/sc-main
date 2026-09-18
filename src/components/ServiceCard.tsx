@@ -1,14 +1,33 @@
+import type { CSSProperties } from 'react'
 import type { Service } from '@/data/services'
 
-export default function ServiceCard({ service }: { service: Service }) {
+// 노트 앱(my-notes) 테마와 맞춘 파스텔 4색을 카드마다 돌아가며 써서
+// 서로 다른 색으로 구분되게 한다. 서비스가 늘어나도 배열에 하나만
+// 추가하면 되도록, 색은 순서(index)로 자동 배정한다.
+const PALETTE = ['cream', 'mint', 'lavender', 'peach'] as const
+
+export default function ServiceCard({
+  service,
+  index,
+}: {
+  service: Service
+  index: number
+}) {
+  const accent = PALETTE[index % PALETTE.length]
+  const style = {
+    backgroundColor: `var(--card-${accent}-bg)`,
+    borderColor: `var(--card-${accent}-border)`,
+  } satisfies CSSProperties
+
   return (
     <a
       href={service.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex flex-col items-center gap-3 rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
+      style={style}
+      className="flex flex-col items-center gap-3 rounded-2xl border p-10 text-center shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg"
     >
-      <span className="text-5xl" aria-hidden="true">
+      <span className="text-6xl" aria-hidden="true">
         {service.icon}
       </span>
       <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{service.name}</h2>

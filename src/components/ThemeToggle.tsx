@@ -8,8 +8,13 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<'light' | 'dark' | null>(null)
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains('dark')
-    setTheme(isDark ? 'dark' : 'light')
+    // theme-init.js가 hydration 전에 이미 .dark 클래스를 붙여두므로 여기서는
+    // 그 값을 그대로 읽어오기만 하면 된다. setState를 콜백 안에서 호출해
+    // effect 본문에서 곧바로 부르지 않게 한다(react-hooks/set-state-in-effect).
+    queueMicrotask(() => {
+      const isDark = document.documentElement.classList.contains('dark')
+      setTheme(isDark ? 'dark' : 'light')
+    })
   }, [])
 
   const toggleTheme = () => {
