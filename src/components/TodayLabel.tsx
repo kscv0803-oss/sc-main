@@ -5,11 +5,10 @@ import { useEffect, useState } from 'react'
 const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토']
 
 function formatToday(d: Date): string {
-  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(
-    d.getDate()
-  ).padStart(2, '0')} (${WEEKDAYS[d.getDay()]})`
+  return `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일 ${WEEKDAYS[d.getDay()]}요일`
 }
 
+// 헤더 설명 문구 뒤에 " · 2026년 9월 19일 토요일"을 이어 붙인다.
 export default function TodayLabel() {
   // 이 페이지는 정적으로 미리 렌더링되므로, 서버 렌더 시점의 날짜가
   // 그대로 굳어 보이지 않도록 마운트된 뒤(방문자의 실제 시각 기준으로)
@@ -25,9 +24,5 @@ export default function TodayLabel() {
     })
   }, [])
 
-  return (
-    <span className="text-xs text-gray-400 dark:text-gray-500">
-      {label ?? ' '}
-    </span>
-  )
+  return <>{label ? ` · ${label}` : ''}</>
 }

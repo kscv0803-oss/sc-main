@@ -7,16 +7,17 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* 카드마다 다르게 쓰는 파스텔 4색 - 노트 앱(my-notes)의 테마 색조와
-     그대로 맞춰서 두 개인 도구가 한 세트처럼 보이게 했다. */
-  --card-cream-bg: hsl(42 55% 96%);
-  --card-cream-border: hsl(38 35% 82%);
-  --card-mint-bg: hsl(160 45% 95%);
-  --card-mint-border: hsl(160 30% 78%);
-  --card-lavender-bg: hsl(265 45% 96%);
-  --card-lavender-border: hsl(263 30% 82%);
-  --card-peach-bg: hsl(18 65% 95%);
-  --card-peach-border: hsl(16 40% 80%);
+  /* 카드는 라이트에서 흰색, 다크에서 어두운 회색으로 통일하고 테두리만 옅게 */
+  --card-bg: #ffffff;
+  --card-border: hsl(0 0% 90%);
+  --card-border-hover: hsl(0 0% 70%);
+
+  /* 앱별 색은 아이콘 뒤 둥근 사각형에만 쓴다 - 노트 앱(my-notes)의 파스텔
+     테마 색조(크림/민트/라벤더/피치)와 맞췄다. */
+  --tile-cream: hsl(40 70% 90%);
+  --tile-mint: hsl(158 50% 88%);
+  --tile-lavender: hsl(265 55% 91%);
+  --tile-peach: hsl(18 75% 90%);
 }
 
 @theme inline {
@@ -30,14 +31,14 @@
   --background: #0a0a0a;
   --foreground: #ededed;
 
-  --card-cream-bg: hsl(36 22% 9%);
-  --card-cream-border: hsl(36 18% 24%);
-  --card-mint-bg: hsl(165 22% 8%);
-  --card-mint-border: hsl(162 20% 24%);
-  --card-lavender-bg: hsl(263 24% 10%);
-  --card-lavender-border: hsl(263 20% 26%);
-  --card-peach-bg: hsl(16 24% 9%);
-  --card-peach-border: hsl(16 20% 25%);
+  --card-bg: hsl(0 0% 11%);
+  --card-border: hsl(0 0% 20%);
+  --card-border-hover: hsl(0 0% 40%);
+
+  --tile-cream: hsl(38 30% 22%);
+  --tile-mint: hsl(162 28% 20%);
+  --tile-lavender: hsl(263 26% 25%);
+  --tile-peach: hsl(16 30% 23%);
 }
 
 body {

@@ -5,23 +5,21 @@ import { services } from "@/data/services";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col justify-center px-6 py-16 sm:py-24">
-      <div className="mb-14 flex items-start justify-between gap-4">
-        <div>
+    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 pb-16 pt-12 sm:pt-24">
+      <header className="mb-10 sm:mb-14">
+        <div className="flex items-center justify-between gap-4">
           <h1 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
             SC
           </h1>
-          <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-            개인 도구 모음
-          </p>
-          <div className="mt-1">
-            <TodayLabel />
-          </div>
+          <ThemeToggle />
         </div>
-        <ThemeToggle />
-      </div>
+        <p className="mt-3 text-base text-gray-500 dark:text-gray-400">
+          개인 도구 모음
+          <TodayLabel />
+        </p>
+      </header>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
         {services.map((service, index) => (
           <ServiceCard key={service.name} service={service} index={index} />
         ))}
