@@ -2,8 +2,8 @@ import type { Service } from '@/data/services'
 
 // 카드 배경은 모두 같고, 앱별 색은 아이콘 뒤 둥근 사각형에만 쓴다.
 // 서비스가 늘어나도 배열에 하나만 추가하면 되도록 색은 순서(index)로
-// 자동 배정한다(1번째=베이지, 2번째=민트, ...).
-const PALETTE = ['cream', 'mint', 'lavender', 'peach'] as const
+// 자동 배정한다(1번째=베이지, 2번째=민트, 3번째=연한 파랑, ...).
+const PALETTE = ['cream', 'mint', 'sky', 'lavender', 'peach'] as const
 
 export default function ServiceCard({
   service,

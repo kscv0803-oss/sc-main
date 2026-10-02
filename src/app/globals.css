@@ -13,9 +13,10 @@
   --card-border-hover: hsl(0 0% 70%);
 
   /* 앱별 색은 아이콘 뒤 둥근 사각형에만 쓴다 - 노트 앱(my-notes)의 파스텔
-     테마 색조(크림/민트/라벤더/피치)와 맞췄다. */
+     테마 색조(크림/민트/라벤더/피치)와 맞췄다. 스카이는 가계부용 연한 파랑. */
   --tile-cream: hsl(40 70% 90%);
   --tile-mint: hsl(158 50% 88%);
+  --tile-sky: hsl(208 80% 91%);
   --tile-lavender: hsl(265 55% 91%);
   --tile-peach: hsl(18 75% 90%);
 }
@@ -37,6 +38,7 @@
 
   --tile-cream: hsl(38 30% 22%);
   --tile-mint: hsl(162 28% 20%);
+  --tile-sky: hsl(210 32% 24%);
   --tile-lavender: hsl(263 26% 25%);
   --tile-peach: hsl(16 30% 23%);
 }

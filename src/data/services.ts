@@ -18,5 +18,11 @@ export const services: Service[] = [
     icon: '📝',
     description: '메모·할 일·여행 기록',
     url: 'https://sc-notebook.vercel.app'
+  },
+  {
+    name: '가계부',
+    icon: '💰',
+    description: '수입·지출·통계 관리',
+    url: 'https://ledger-b2qi.vercel.app'
   }
 ]
